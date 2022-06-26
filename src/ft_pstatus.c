@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-void	*ft_pstatus(t_philo *p, char *s)
+void	ft_pstatus(t_philo *p, char *s)
 {
 	t_var	*v;
 

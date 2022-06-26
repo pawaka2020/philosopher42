@@ -59,7 +59,7 @@ void				ft_start(t_var *v);
 void				*ft_routine(void *info);
 void				*ft_monitor(void *info);
 long				ft_gettime(void);
-void				*ft_pstatus(t_philo *p, char *s);
+void				ft_pstatus(t_philo *p, char *s);
 void				ft_pickforks(t_philo *p);
 void				ft_usleep(int n, t_var *v);
 
