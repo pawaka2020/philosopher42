@@ -29,11 +29,16 @@ int	ft_valid(t_var *v, int argc)
 	return (1);
 }
 
-//fill this properly later.
-int	ft_onlydigits(char *param)
+int	ft_onlydigits(char *s)
 {
-	if (!param)
-		return (0);
+	int	i;
+
+	i = -1;
+	while (i++, s[i] != 0)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	}
 	return (1);
 }
 
@@ -47,7 +52,7 @@ int	ft_onlydigits_(int argc, char **argv)
 	while (i++, i < argc)
 	{
 		if (!ft_onlydigits(argv[i]))
-			return (ft_error("params must not have letters"));
+			return (ft_error("params must not have non-digit chars"));
 	}
 	return (1);
 }
