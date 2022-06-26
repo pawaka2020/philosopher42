@@ -12,11 +12,11 @@
 
 #include "philo.h"
 
-void	ft_declaredeath(t_var *v, int i )
+void	ft_declaredeath(t_var *v, long time, int i )
 {
 	v->die = 1;
 	pthread_mutex_lock(&v->print_lock);
-	printf("%ld %d died\n", (long)time, v->philo[i].id + 1);
+	printf("%ld %d died\n", time, v->philo[i].id + 1);
 	pthread_mutex_unlock(&v->print_lock);
 }
 
@@ -40,7 +40,7 @@ void	*ft_monitor(void *info)
 				if (time > v->philo[i].t_lastmeal \
 				&& v->philo[i].t_lastmeal != v->start)
 				{
-					ft_declaredeath(v, i);
+					ft_declaredeath(v, time, i);
 					return (0);
 				}
 			}
