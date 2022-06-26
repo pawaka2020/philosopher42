@@ -36,7 +36,7 @@ int	ft_onlydigits(char *s)
 	i = -1;
 	while (i++, s[i] != 0)
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if ((s[i] < '0' || s[i] > '9') && (s[i] != '-' && s[i] != '+'))
 			return (0);
 	}
 	return (1);
@@ -52,7 +52,7 @@ int	ft_onlydigits_(int argc, char **argv)
 	while (i++, i < argc)
 	{
 		if (!ft_onlydigits(argv[i]))
-			return (ft_error("params must not have non-digit chars"));
+			return (ft_error("params must not have non-number chars"));
 	}
 	return (1);
 }
